@@ -1,0 +1,387 @@
+.stacked-gallery {
+  padding: 50px 20px;
+  background: #f7fafc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.stacked-gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.stack-container {
+  position: relative;
+  width: 280px;
+  height: 350px;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* Stack items overlap with rotation and position */
+.stack-item {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 220px;
+  height: 300px;
+  margin-left: -110px; /* half width to center */
+  border-radius: 14px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: #fff;
+  transition: 
+    transform 0.5s ease, 
+    box-shadow 0.3s ease,
+    z-index 0.3s ease;
+  
+  transform: rotate(var(--angle)) translateX(calc(var(--index) * -10px));
+  z-index: 0;
+}
+
+/* Set z-index based on order to stack properly */
+.stack-item:nth-child(1) { z-index: 5; --index: 4;}
+.stack-item:nth-child(2) { z-index: 4; --index: 3;}
+.stack-item:nth-child(3) { z-index: 3; --index: 2;}
+.stack-item:nth-child(4) { z-index: 2; --index: 1;}
+.stack-item:nth-child(5) { z-index: 1; --index: 0;}
+
+/* Image style */
+.stack-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Hover stack container: expand spread all items horizontally */
+.stack-container:hover .stack-item {
+  transform: rotate(0deg) translateX(calc(var(--index) * 55px));
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+/* Hover a specific item: bring it to front and enlarge */
+.stack-container:hover .stack-item:hover {
+  transform: rotate(0deg) translateX(calc(var(--index) * 55px)) scale(1.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  z-index: 10 !important;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* Section Styling */
+.fusion-gallery {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom right, #eef2f3, #dbe9f4);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.fusion-gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Stack container */
+.fusion-stack {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* Individual frame setup */
+.fusion-frame {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 240px;
+  height: 320px;
+  margin-left: -120px;
+  transform: rotate(var(--angle));
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  box-shadow:
+    0 8px 12px rgba(0,0,0,0.2),
+    0 0 0 3px #fff;
+}
+
+/* Images */
+.fusion-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  pointer-events: none;
+}
+
+/* Hover effect to unify stack */
+.fusion-stack:hover .fusion-frame {
+  transform: rotate(0deg) translateX(0px);
+  top: 0;
+  left: 0;
+  margin-left: 0;
+  z-index: 1;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+/* Last image stays on top after merge */
+.fusion-stack:hover .fusion-frame:last-child {
+  z-index: 10;
+}
+
+
+/*  gallery 2*/
+
+
+  .photo-stack {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    margin: 40px auto;
+    cursor: pointer;
+    perspective: 1500px;
+  }
+
+  .frame {
+    position: absolute;
+    width: 280px;
+    height: 380px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 5px solid transparent;
+    box-shadow:
+      0 15px 25px rgba(0,0,0,0.3),
+      inset 0 0 60px rgba(255,255,255,0.12);
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease,
+      border-color 0.5s ease,
+      top 0.5s ease,
+      left 0.5s ease;
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4));
+  }
+
+  /* Color gradient border overlay */
+  .frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    pointer-events: none;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    opacity: 0.3;
+    mix-blend-mode: screen;
+    transition: opacity 0.5s ease;
+  }
+
+  /* Each frame has different position, rotation & border color */
+  .frame1 {
+    top: 20px;
+    left: -25px;
+    transform: rotate(-8deg);
+    border-color: #ff416c;
+  }
+  .frame1::before {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  }
+
+  .frame2 {
+    top: 45px;
+    left: 10px;
+    transform: rotate(10deg);
+    border-color: #1FA2FF;
+  }
+  .frame2::before {
+    background: linear-gradient(135deg, #1FA2FF, #12D8FA, #A6FFCB);
+  }
+
+  .frame3 {
+    top: 70px;
+    left: -10px;
+    transform: rotate(-5deg);
+    border-color: #FFB347;
+  }
+  .frame3::before {
+    background: linear-gradient(135deg, #FFB347, #FFCC33);
+  }
+
+  /* Images fill frames */
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  /* Hover: frames combine into one center piece */
+  .photo-stack:hover .frame {
+    top: 0 !important;
+    left: 0 !important;
+    transform: rotate(0deg) scale(1.1) !important;
+    border-color: transparent !important;
+    box-shadow:
+      0 20px 40px rgba(0,0,0,0.6),
+      0 0 60px rgba(255,255,255,0.3);
+  }
+
+  .photo-stack:hover .frame::before {
+    opacity: 0 !important;
+  }
+
+  .photo-stack:hover .frame img {
+    transform: scale(1.05);
+  }
+
+  /* Subtle floating animation */
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(var(--angle)); }
+    50% { transform: translateY(-8px) rotate(calc(var(--angle) + 2deg)); }
+  }
+
+  .frame1 { animation: floaty 6s ease-in-out infinite; --angle: -8deg; }
+  .frame2 { animation: floaty 5s ease-in-out infinite; --angle: 10deg; }
+  .frame3 { animation: floaty 7s ease-in-out infinite; --angle: -5deg; }
+
+
+
+/*  Stake 1  */
+
+  .gallery-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+    background: #f7f9fb;
+  }
+
+  .photo-stack {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    cursor: pointer;
+    perspective: 1500px;
+    transition: transform 0.3s ease;
+  }
+
+  .frame {
+    position: absolute;
+    width: 280px;
+    height: 380px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 5px solid transparent;
+    box-shadow:
+      0 15px 25px rgba(0,0,0,0.3),
+      inset 0 0 60px rgba(255,255,255,0.12);
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease,
+      border-color 0.5s ease,
+      top 0.5s ease,
+      left 0.5s ease;
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4));
+    text-decoration: none;
+    display: block;
+  }
+
+  .frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    pointer-events: none;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    opacity: 0.3;
+    mix-blend-mode: screen;
+    transition: opacity 0.5s ease;
+  }
+
+  .frame1 {
+    top: 20px;
+    left: -25px;
+    transform: rotate(-8deg);
+    border-color: #ff416c;
+  }
+  .frame1::before {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  }
+
+  .frame2 {
+    top: 45px;
+    left: 10px;
+    transform: rotate(10deg);
+    border-color: #1FA2FF;
+  }
+  .frame2::before {
+    background: linear-gradient(135deg, #1FA2FF, #12D8FA, #A6FFCB);
+  }
+
+  .frame3 {
+    top: 70px;
+    left: -10px;
+    transform: rotate(-5deg);
+    border-color: #FFB347;
+  }
+  .frame3::before {
+    background: linear-gradient(135deg, #FFB347, #FFCC33);
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .photo-stack:hover .frame {
+    top: 0 !important;
+    left: 0 !important;
+    transform: rotate(0deg) scale(1.1) !important;
+    border-color: transparent !important;
+    box-shadow:
+      0 20px 40px rgba(0,0,0,0.6),
+      0 0 60px rgba(255,255,255,0.3);
+  }
+
+  .photo-stack:hover .frame::before {
+    opacity: 0 !important;
+  }
+
+  .photo-stack:hover .frame img {
+    transform: scale(1.05);
+  }
+
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(var(--angle)); }
+    50% { transform: translateY(-8px) rotate(calc(var(--angle) + 2deg)); }
+  }
+
+  .frame1 { animation: floaty 6s ease-in-out infinite; --angle: -8deg; }
+  .frame2 { animation: floaty 5s ease-in-out infinite; --angle: 10deg; }
+  .frame3 { animation: floaty 7s ease-in-out infinite; --angle: -5deg; }
+
+  @media (max-width: 1000px) {
+    .gallery-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

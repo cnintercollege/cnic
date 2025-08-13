@@ -1,0 +1,232 @@
+/* BASIC RESET */
+/* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
+/* Body and General Layout */
+/*body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #eef2ff, #f0f4ff);
+  overflow-x: hidden;
+  padding-top: 50px; /* To avoid content hiding behind floating logo */
+}*/
+
+/* Reset Styles */
+/* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
+/* Body and General Layout */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #eef2ff, #f0f4ff);
+  overflow-x: hidden;
+  padding-top: 50px; /* To prevent content hiding behind the floating logo */
+}
+
+/* Floating Logo (Moving In Front of All) */
+.floating-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  z-index: 9999; /* Ensure it's on top of all elements */
+  opacity: 0.6;  /* Make it semi-transparent */
+  pointer-events: none; /* Prevent logo from blocking interactions */
+  animation: floatLogo 20s linear infinite; /* Apply floating animation */
+}
+
+/* Ensure image takes up entire container */
+.floating-logo .logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain; /* Keeps aspect ratio intact */
+}
+
+/* Animation for the floating logo */
+@keyframes floatLogo {
+  0%   { top: 5%; left: 5%; }
+  25%  { top: 10%; left: 80%; }
+  50%  { top: 70%; left: 60%; }
+  75%  { top: 80%; left: 20%; }
+  100% { top: 30%; left: 5%; }
+}
+
+
+/* Main Layout */
+main {
+  display: flex;
+  padding: 10px;
+  gap: 30px;
+  position: relative;
+}
+
+/* Sidebar - Left */
+.sidebar {
+  width: 300px;
+}
+
+/* Notice Board */
+.notice {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.notice h3 {
+  font-size: 1.5rem;
+  color: #004080;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.notice-section {
+  margin-bottom: 20px;
+}
+
+.notice-section h4 {
+  font-size: 1.2rem;
+  color: #004080;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.notice ul {
+  list-style: none;
+}
+
+.notice li {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-left: 4px solid #f0a500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.notice li:hover {
+  transform: translateX(15px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.notice li span {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* View More Button */
+.view-more {
+  background-color: #f0a500;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.view-more:hover {
+  background-color: #d88a00;
+}
+
+/* Student Tools Section */
+.glass-box {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.glass-box h2 {
+  font-size: 1.3rem;
+  color: #004080;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.glass-box a {
+  display: block;
+  padding: 12px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #004080;
+  background: #f0f0f0;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.glass-box a:hover {
+  background: #f0a500;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.glass-box a:active {
+  transform: translateY(0);
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.content h2 {
+  color: #004080;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+/*footer {
+  text-align: center;
+  background: #004080;
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
+}*/
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .notice, .glass-box {
+    padding: 20px;
+  }
+
+  .notice h3, .glass-box h2 {
+    font-size: 1.2rem;
+  }
+
+  .notice li {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .glass-box a {
+    font-size: 0.95rem;
+  }
+}

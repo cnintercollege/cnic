@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blank Admission Form</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ensure the page is styled properly */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .form-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #000;
+      background: #fff;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .adm-box {
+      width: 130px;
+      height: 70px;
+      border: 1px solid #000;
+      font-size: 12px;
+      padding-top: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .photo-box {
+      width: 150px;
+      height: 120px;
+      border: 1px solid #000;
+      text-align: center;
+      font-size: 12px;
+      padding-top: 40px;
+      background-color: #f5f5f5;
+    }
+
+    .college-header {
+      text-align: center;
+      flex-grow: 1;
+      margin: 0 20px;
+    }
+
+    .college-header h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .label-box {
+      background: black;
+      color: white;
+      padding: 2px 6px;
+      font-weight: bold;
+    }
+
+    .form-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .form-list li {
+      margin-bottom: 12px;
+    }
+
+   .large-input {
+  width: 65%;     /* large input width */
+  padding: 6px;
+  font-size: 16px;
+}
+
+.large-input2 {
+  width: 95%;     /* large input width */
+  height: 25px;
+  padding: 6px;
+  font-size: 16px;
+}
+
+  .small-input {
+  width: 40%;     /* smaller input width */
+  padding: 4px;
+  font-size: 14px;
+}
+
+    .address-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .address-table th,
+    .address-table td {
+      border: 1px solid #000;
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      border-top: 1px dashed #000;
+      padding-top: 20px;
+    }
+
+    /* Hide buttons when printing */
+    @media print {
+      .form-buttons, .photo-box, .college-header, .top-row {
+        display: none;
+      }
+
+      /* Only display the form content for printing */
+      .form-container {
+        width: 100%;
+        padding: 0;
+        border: none;
+      }
+
+      input[type="text"] {
+        border: none;
+        background: none;
+      }
+
+      .form-list li {
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="top-row">
+      <div class="adm-box"><b>For Office Use Only</b><br>Adm. No..................<br>Year.........................<br>Adm. Date...............</div>
+      <div class="college-header">
+        <h2>CHHOTANAGPUR INTER MAHAVIDYALAYA</h2>
+        <p>Affiliated to Jharkhand Academic Council, Ranchi</p>
+        <p>(Established & Managed by Manj. Hyp Education and Welfare Society, Bokaro)</p>
+        <p>Regd. No. 13/2007-08</p>
+        <p><strong>APPLICATION FORM FOR ADMISSION</strong></p>
+        <p>
+          <span class="label-box">ARTS</span>
+          <label><input type="checkbox"> Regular</label>
+          <label><input type="checkbox"> Private</label>
+        </p>
+      </div>
+      <div class="photo-box">Paste<br>Photo</div>
+    </div>
+
+    <form id="admissionForm">
+      <ol class="form-list">
+        <li>Name of the Applicant (in Block Letters): <input type="text" class="large-input" name="applicant_name"></li>
+        <li>Mother's Name (in Block Letters): <input type="text" class="large-input" name="mother_name"></li>
+        <li>Father's Name (in Block Letters): <input type="text" class="large-input" name="father_name"></li>
+        <li>
+          <strong>4. Address</strong><br>
+          <table class="address-table">
+            <tr>
+              <th></th>
+              <th>Correspondence</th>
+              <th>Permanent</th>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td><input type="text" class="large-input2" name="address_correspondence" id="address_correspondence"></td>
+              <td><input type="text"class="large-input2" name="address_permanent" id="address_permanent"></td>
+            </tr>
+            <tr>
+              <td>District</td>
+              <td><input type="text" class="large-input2" name="mother_name_correspondence" id="mother_name_correspondence"></td>
+              <td><input type="text" class="large-input2" name="mother_name_permanent" id="mother_name_permanent"></td>
+            </tr>
+            <tr>
+              <td>State</td>
+              <td><input type="text" class="large-input2" name="state_correspondence" id="state_correspondence"></td>
+              <td><input type="text" class="large-input2" name="state_permanent" id="state_permanent"></td>
+            </tr>
+            <tr>
+              <td>Mobile No.</td>
+              <td><input type="text" class="large-input2" name="mobile_no_correspondence" id="mobile_no_correspondence"></td>
+              <td><input type="text" class="large-input2" name="mobile_no_permanent" id="mobile_no_permanent" placeholder="Whatsapp" ></td>
+            </tr>
+            <tr>
+              <td>Student's Aadhaar No.</td>
+              <td colspan="2"><input type="text" class="large-input" name="aadhaar_number" id="aadhaar_number"></td>
+            </tr>
+            <tr>
+              <td>Mother's Aadhaar No.</td>
+              <td colspan="2"><input type="text" class="large-input" name="aadhaar_number" id="aadhaar_number"></td>
+            </tr>
+            <tr>
+              <td>Father's Aadhaar No.</td>
+              <td colspan="2"><input type="text" class="large-input" name="aadhaar_number" id="aadhaar_number"></td>
+            </tr>
+          </table>
+          <label for="sameAddressCheckbox">
+            <input type="checkbox" id="sameAddressCheckbox"> Same as Correspondence Address
+          </label>
+        </li>
+        <li>
+        &nbsp;&nbsp;&nbsp;&nbsp;Gender: 
+           <label><input type="radio" name="gender" value="Male"> Male</label>
+           <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Birth: <input type="text" name="dob" placeholder="DD/MM/YYYY">
+          &nbsp;&nbsp;&nbsp;&nbsp;Religion: <input type="text" name="religion">
+          <br>Blood Group: <input type="text" name="blood_group">
+         &nbsp;&nbsp;Marital Status: <input type="text" name="marital_status">
+         &nbsp;&nbsp;Caste: <input type="text" name="caste_certificate">
+         &nbsp;&nbsp;<br>Occupation of Guardian: <input type="text" name="guardian_occupation">
+         &nbsp;&nbsp;Last Exam Passed: <input type="text" name="last_exam_passed"> &nbsp;&nbsp;Language: <input type="text" name="exam_language">
+        <li>Subjects to take up for the following class: <input type="text" name="subjects"></li>
+        <li>Language: <input type="text" name="language" placeholder="Hindi / English"> &nbsp;&nbsp;Blood Group: <input type="text" name="blood_group_2"></li>
+        <li>Subjects/Subject’s: <input type="text" name="subjects_2"></li>
+        <li>Compartment appearing in: <input type="text" name="compartment"></li>
+        <li>Educational Subject: <input type="text" name="educational_subject"></li>
+      </ol>
+
+      <div class="footer">
+        <p><strong>Office Use Only</strong></p>
+        <p>CHHOTANAGPUR INTER MAHAVIDYALAYA</p>
+        <p>Name of Applicant: <input type="text" name="office_name"></p>
+        <p>Class: <input type="text" name="class" placeholder="XI (ART)"> &nbsp;&nbsp;Roll No: <input type="text" name="roll_no"></p>
+        <p>Signature of Clerk: __________________________</p>
+      </div>
+
+      <!-- Submit and Print Buttons -->
+      <div class="form-buttons">
+        <button type="submit" id="submitBtn">Submit</button>
+        <button type="button" id="printBtn" onclick="printForm()">Print</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Function to print only the admission form content
+    function printForm() {
+      const formContent = document.getElementById("admissionForm").innerHTML; // Get the form content
+      const originalContent = document.body.innerHTML; // Get the original content of the page
+      document.body.innerHTML = formContent; // Set the body to only the form content
+      window.print(); // Open the print dialog
+      document.body.innerHTML = originalContent; // Restore the original content after printing
+    }
+
+    // Handle "Same as Correspondence Address" checkbox
+    document.getElementById('sameAddressCheckbox').addEventListener('change', function() {
+      if (this.checked) {
+        // Copy values from Correspondence to Permanent fields
+        document.getElementById('address_permanent').value = document.getElementById('address_correspondence').value;
+        document.getElementById('mother_name_permanent').value = document.getElementById('mother_name_correspondence').value;
+        document.getElementById('state_permanent').value = document.getElementById('state_correspondence').value;
+        document.getElementById('mobile_no_permanent').value = document.getElementById('mobile_no_correspondence').value;
+      } else {
+        // Clear the Permanent fields if checkbox is unchecked
+        document.getElementById('address_permanent').value = '';
+        document.getElementById('mother_name_permanent').value = '';
+        document.getElementById('state_permanent').value = '';
+        document.getElementById('mobile_no_permanent').value = '';
+      }
+    });
+  </script>
+</body>
+</html>

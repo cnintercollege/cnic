@@ -1,0 +1,129 @@
+/* General Body Styling */
+.main-body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: linear-gradient(135deg, #ff6f61, #ff8c42); /* Gradient background */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+/* Video Gallery Wrapper */
+.gallery-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff, #d9d9d9); /* Lighter gradient for the container */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background-image: url('https://www.transparenttextures.com/patterns/hexagons.png');
+  overflow: hidden; /* Hide anything that goes outside of the wrapper */
+}
+
+/* Gallery Header Styling */
+.gallery-header {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, #ff6f61, #ff8c42);
+  padding: 12px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Row Layout - CSS Grid */
+.video-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 20px; /* Space between items */
+  padding-bottom: 10px;
+  justify-items: center;
+}
+
+/* Individual Video Card Styling */
+.video-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  position: relative;
+  width: 320px; /* Set a fixed width for horizontal layout */
+  height: 225px;
+}
+
+/* Video Player Styling */
+.video-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}
+
+/* Fade In for Video */
+.video-card video {
+  opacity: 1;
+}
+
+/* Video Title Styling */
+.video-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 15px;
+  background-color: #ff6f61;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 0 0 12px 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect on Title */
+.video-card:hover .video-title {
+  background-color: #ff8c42;
+  transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .gallery-header {
+    font-size: 2.5rem;
+  }
+
+  /* 2 cards per row on medium screens */
+  .video-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-header {
+    font-size: 2rem;
+  }
+
+  /* 1 card per row on small screens */
+  .video-row {
+    grid-template-columns: 1fr;
+  }
+
+  .video-card {
+    max-width: 100%;
+  }
+}
