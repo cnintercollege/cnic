@@ -13,7 +13,7 @@ cncollege is an educational platform designed to simplify and enhance learning e
 
 🔒 Secure Login and Role-Based Access
 
-🌐 Multi-language support (English, 中文, etc.)
+🌐 Multi-language support (English, Hindi, etc.)
 
 🛠️ Tech Stack
 Frontend: React / Vue / Angular (Specify here)
