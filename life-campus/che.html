@@ -35,7 +35,7 @@
     </li>
 
     <li class="menu-item-1">
-      <a class="menu-link-1" href="../index.html">Department</a>
+      <a class="menu-link-1" href="#">Department</a>
       <div class="dropdown-1">
         <div class="dropdown-column-1">
           <strong>Science</strong>
@@ -73,7 +73,7 @@
     </li>
 
     <li class="menu-item">
-      <a class="menu-link" href="../index.html">Admission</a>
+      <a class="menu-link" href="#">Admission</a>
       <div class="dropdown">
         <a href="../admission/selection-list.html">Selection List</a>
         <a href="../admission/admission-prosedures.html">Admission Procedures</a>
@@ -83,7 +83,7 @@
     </li>
 
     <li class="menu-item">
-      <a class="menu-link" href="../index.html">Courses</a>
+      <a class="menu-link" href="#">Courses</a>
       <div class="dropdown">
         <a href="../course/science.html">Science</a>
         <a href="../course/arts.html">Arts</a>
@@ -101,7 +101,7 @@
     </li>
 
     <li class="menu-item">
-      <a class="menu-link" href="../index.html">Life & Campus</a>
+      <a class="menu-link" href="#">Life & Campus</a>
       <div class="dropdown">
         <a href="../life-campus/library.html">Library</a>
         <a href="../life-campus/computer.html">Computer Lab</a>
@@ -115,7 +115,7 @@
     </li>
 
     <li class="menu-item">
-      <a class="menu-link" href="../index.html">Gallery</a>
+      <a class="menu-link" href="#">Gallery</a>
       <div class="dropdown">
         <a href="../gallery/photo.html">Photo Gallery</a>
         <a href="../gallery/video.html">Video Gallery</a>
@@ -124,7 +124,7 @@
     </li>
 
     <li class="menu-item">
-      <a class="menu-link" href="../index.html">Society</a>
+      <a class="menu-link" href="#">Society</a>
       <!--div class="dropdown">
         <a href="#">Web Development</a>
         <a href="#">Data Science</a>
@@ -148,12 +148,101 @@
 
 
     <li class="menu-item">
-      <a class="menu-link" href="contactus.html">Contact</a>
+      <a class="menu-link" href="../contact/contactus.html">Contact</a>
     </li>
   </ul>
 </nav>
 
 
+
+<!-------==============================================================---->
+  <!--                          popup-box                              -->
+<!-------==============================================================---->
+
+<style>
+/* Overlay */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    /* Popup box */
+    .popup-box {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+      animation: slideDown 0.4s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .popup-box h2 {
+      margin: 0 0 15px;
+      color: #003366;
+      font-size: 28px;
+    }
+
+    .popup-box p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .popup-box button {
+      padding: 10px 20px;
+      background: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .popup-box button:hover {
+      background: #005599;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Popup -->
+<div class="popup-overlay" id="comingSoonPopup">
+  <div class="popup-box">
+    <h2>🚧 Coming Soon</h2>
+    <p>We're working hard to bring you something amazing!</p>
+    <button onclick="closePopup()">Got It</button>
+  </div>
+</div>
+
+<script>
+  function closePopup() {
+    document.getElementById('comingSoonPopup').style.display = 'none';
+  }
+
+  // Optionally show after a delay
+  // setTimeout(() => {
+  //   document.getElementById('comingSoonPopup').style.display = 'flex';
+  // }, 3000);
+</script>
+
+<!-------==============================================================---->
+  <!--                          popup-box up                             -->
+<!-------==============================================================---->
 
 
 
@@ -195,7 +284,7 @@
     
     <!-- Logo & About -->
     <div class="footer-column">
-      <img src="images/logo.png" alt="Logo" class="footer-logo">
+      <img src="../img/logo3.jpg" alt="Logo" class="footer-logo">
       <p class="footer-about">Empowering learners with resources, labs, and guidance for a brighter future.</p>
     </div>
 
@@ -226,7 +315,7 @@
     <div class="footer-column">
       <h3>Contact Us</h3>
       <ul class="contact-info">
-        <li><i class="fas fa-map-marker-alt"></i> Near jharkhand Bijili Office, Dugda, Bokaro Steel City, Jharkhand 828404</li>
+        <li><i class="fas fa-map-marker-alt"></i> Near Jharkhand Electricity Office, Dugda, <br>Bokaro Steel City, Jharkhand 828404</li>
         <li><i class="fas fa-phone"></i> +91 9939106630</li>
         <li><i class="fas fa-envelope"></i> cnintercollege13@gmail.com</li>
       </ul>
