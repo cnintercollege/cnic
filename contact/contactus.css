@@ -1,0 +1,186 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #d9a7c7, #fffcdc);
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Glass Banner */
+.glass-banner {
+  height: 280px;
+  background: url('../img/office.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.glass-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6); /* red glow */
+}
+
+.banner-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.banner-content a {
+  color: #darkblue;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.6); /* red glow */
+}
+
+.banner-content span {
+  opacity: 0.9;
+  font-weight: bold;
+  color: darkblue;
+}
+
+
+/* Contact Section */
+.glass-contact-section {
+  padding: 80px 20px;
+}
+
+.glass-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* Glass Form */
+.glass-form {
+  flex: 1 1 58%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.glass-form h2 {
+  margin-bottom: 25px;
+  font-size: 2em;
+  color: #222;
+}
+
+.glass-form input,
+.glass-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #222;
+  font-size: 1em;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+
+.glass-form input::placeholder,
+.glass-form textarea::placeholder {
+  color: #666;
+}
+
+.glass-form button {
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  padding: 14px 30px;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(120, 115, 245, 0.4);
+}
+
+.glass-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(120, 115, 245, 0.6);
+}
+
+/* Glass Info */
+.glass-info {
+  flex: 1 1 35%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #222;
+}
+
+.info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.emoji {
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+.glass-info a {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glass-container {
+    flex-direction: column;
+  }
+}
+
+
+/* Map Section */
+.map-section {
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.map-container {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.map-frame {
+  width: 100%;
+  height: 450px;
+  border: none;
+  display: block;
+  filter: saturate(110%) contrast(105%);
+  border-radius: 20px;
+}
