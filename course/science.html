@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CN Inter College, Dugda</title>
   <link rel="stylesheet" type="text/css" href="cninter.css">
+  <link rel="stylesheet" type="text/css" href="course.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Philosopher">
   
 </head>
@@ -155,92 +156,57 @@
 
 
 <!-------==============================================================---->
-  <!--                          popup-box                              -->
+  <!--                          Course Science                              -->
 <!-------==============================================================---->
 
-<style>
-/* Overlay */
-    .popup-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-    }
+<section class="science-chart">
+  <h3 class="section-title">🔬 Science Stream – Course Overview</h3>
 
-    /* Popup box */
-    .popup-box {
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      max-width: 400px;
-      width: 90%;
-      position: relative;
-      animation: slideDown 0.4s ease-out;
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .popup-box h2 {
-      margin: 0 0 15px;
-      color: #003366;
-      font-size: 28px;
-    }
-
-    .popup-box p {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .popup-box button {
-      padding: 10px 20px;
-      background: #003366;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .popup-box button:hover {
-      background: #005599;
-    }
-  </style>
-</head>
-<body>
-
-<!-- Popup -->
-<div class="popup-overlay" id="comingSoonPopup">
-  <div class="popup-box">
-    <h2>🚧 Coming Soon</h2>
-    <p>We're working hard to bring you something amazing!</p>
-    <button onclick="closePopup()">Got It</button>
+  <div class="science-summary">
+    <div class="summary-box">
+      <h4>👨‍🎓 Eligibility</h4>
+      <p>Passed 10th with Science (Math/Biology)</p>
+    </div>
+    <div class="summary-box">
+      <h4>⏳ Duration</h4>
+      <p>2 Years (Class XI–XII)</p>
+    </div>
+    <div class="summary-box">
+      <h4>📦 Seats</h4>
+      <p>512 Available</p>
+    </div>
   </div>
-</div>
 
-<script>
-  function closePopup() {
-    document.getElementById('comingSoonPopup').style.display = 'none';
-  }
+  <table class="science-table">
+    <thead>
+      <tr>
+        <th>Subject Type</th>
+        <th>Subjects</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Compulsory</td>
+        <td>Hindi, English</td>
+      </tr>
+      <tr>
+        <td>Group A (Choose 2–3)</td>
+        <td>Physics, Chemistry, Mathematics, Biology</td>
+      </tr>
+      <tr>
+        <td>Optional</td>
+        <td>Computer Science, Environmental Studies, Physical Education</td>
+      </tr>
+    </tbody>
+  </table>
 
-  // Optionally show after a delay
-  // setTimeout(() => {
-  //   document.getElementById('comingSoonPopup').style.display = 'flex';
-  // }, 3000);
-</script>
+  <div class="science-notes">
+    💡 <strong>Note:</strong> Practical labs available. NEET/JEE Foundation (optional). Follows JAC Ranchi curriculum.
+  </div>
+</section>
 
 <!-------==============================================================---->
-  <!--                          popup-box up                             -->
+  <!--                          Course Science                          -->
 <!-------==============================================================---->
 
 

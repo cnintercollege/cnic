@@ -1,0 +1,177 @@
+.admission-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh; /* full height */
+}
+
+.admission-page .container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 40px 50px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.admission-page .header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admission-page .header h1 {
+  font-size: 28px;
+  color: #0b3d3d;
+}
+
+.admission-page .header h2 {
+  font-size: 20px;
+  color: #2c7a7b;
+  margin: 10px 0;
+}
+
+.admission-page .header h3 {
+  font-size: 18px;
+  color: #444;
+}
+
+.admission-page .section-title {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #0b3d3d;
+  border-bottom: 2px solid #0b3d3d;
+  padding-bottom: 5px;
+}
+
+.admission-page ul,
+.admission-page ol {
+  padding-left: 20px;
+}
+
+.admission-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.admission-page th,
+.admission-page td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.admission-page th {
+  background-color: #0b3d3d;
+  color: white;
+  text-align: left;
+}
+
+.admission-page .notes {
+  background-color: #f1f1f1;
+  border-left: 4px solid #0b3d3d;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+
+.admission-page .contact {
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+.admission-page .footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 50px;
+  color: #555;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+/* Responsive Mobile Styles */
+@media (max-width: 768px) {
+  .admission-page .container {
+    padding: 20px 25px;
+    margin: 15px;
+  }
+
+  .admission-page .header h1 {
+    font-size: 24px;
+  }
+
+  .admission-page .header h2 {
+    font-size: 18px;
+  }
+
+  .admission-page .header h3 {
+    font-size: 16px;
+  }
+
+  .admission-page .section-title {
+    font-size: 18px;
+  }
+
+  .admission-page table,
+  .admission-page thead,
+  .admission-page tbody,
+  .admission-page th,
+  .admission-page td,
+  .admission-page tr {
+    display: block;
+  }
+
+  .admission-page thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .admission-page tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .admission-page td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  .admission-page td:before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 700;
+    color: #0b3d3d;
+  }
+
+  .admission-page td:nth-of-type(1):before { content: "Faculty"; }
+  .admission-page td:nth-of-type(2):before { content: "Available Seats"; }
+  .admission-page td:nth-of-type(3):before { content: "Duration"; }
+  .admission-page td:nth-of-type(4):before { content: "Eligibility"; }
+  .admission-page td:nth-of-type(5):before { content: "Subjects Offered"; }
+}
+
+/* Print styles */
+@media print {
+  .admission-page {
+    background: white;
+  }
+
+  .admission-page .container {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 30px;
+    margin: 0;
+  }
+}

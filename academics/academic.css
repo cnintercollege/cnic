@@ -1,0 +1,243 @@
+.academic-calendar {
+  margin-top: 40px;
+  background: linear-gradient(to right, #f0faff, #e1f5fe);
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 87, 146, 0.1);
+  transition: background 0.3s ease;
+}
+
+.section-title {
+  color: #004e8f;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  border-bottom: 2px dashed #4fc3f7;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  width: 60px;
+  background: #4fc3f7;
+  border-radius: 2px;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15.5px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.calendar-table th,
+.calendar-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.calendar-table th {
+  background: linear-gradient(to right, #0288d1, #0277bd);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.calendar-table tr:nth-child(even) {
+  background-color: #f9fcff;
+}
+
+.calendar-table tbody tr {
+  transition: background-color 0.4s ease, transform 0.2s ease;
+}
+
+.calendar-table tbody tr:hover {
+  background: linear-gradient(to right, #e1f5fe, #b2ebf2);
+  transform: scale(1.01);
+  cursor: default;
+}
+
+/* Month badge styling */
+.month-badge {
+  background: #0288d1;
+  color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .academic-calendar {
+    padding: 20px;
+  }
+
+  .calendar-table thead {
+    display: none;
+  }
+
+  .calendar-table,
+  .calendar-table tbody,
+  .calendar-table tr,
+  .calendar-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .calendar-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    background: #ffffff;
+  }
+
+  .calendar-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    border-bottom: 1px dashed #ddd;
+  }
+
+  .calendar-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0277bd;
+  }
+
+  .month-badge {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+}
+
+
+/* ================================ Holiday ==============================*/
+
+.holiday-calendar {
+  margin-top: 40px;
+  background: linear-gradient(to right, #fff5f5, #ffecec);
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.05);
+}
+
+.holiday-calendar .section-title {
+  color: #c62828;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-bottom: 2px dashed #ff8a80;
+  padding-bottom: 10px;
+}
+
+.holiday-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15.5px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.holiday-table th,
+.holiday-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.holiday-table th {
+  background: linear-gradient(to right, #ef5350, #e53935);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.holiday-table tr:nth-child(even) {
+  background-color: #fff7f7;
+}
+
+.holiday-table tbody tr:hover {
+  background-color: #ffeaea;
+  transition: 0.3s;
+  cursor: default;
+}
+
+/* Responsive (Mobile View) */
+@media (max-width: 768px) {
+  .holiday-calendar {
+    padding: 20px;
+  }
+
+  .holiday-table thead {
+    display: none;
+  }
+
+  .holiday-table, 
+  .holiday-table tbody, 
+  .holiday-table tr, 
+  .holiday-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .holiday-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    background: #ffffff;
+  }
+
+  .holiday-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    border-bottom: 1px dashed #ddd;
+  }
+
+  .holiday-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #e53935;
+  }
+}
